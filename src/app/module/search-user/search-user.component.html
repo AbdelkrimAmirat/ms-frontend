@@ -1,0 +1,18 @@
+
+<!-- Dans search-user.component.html -->
+
+<div class="container">
+    <h2>Rechercher un Utilisateur</h2>
+    <input type="number" [formControl]="id" placeholder="Entrez l'ID de l'utilisateur">
+    <button (click)="searchUser()">Rechercher</button>
+  
+    <div *ngIf="user">
+      <p>ID: {{ user.id }}</p>
+      <p>Nom: {{ user.userName }}</p>
+      <p>Email: {{ user.email }}</p>
+      <!-- Affichez plus de détails si nécessaire -->
+    </div>
+    
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+  
