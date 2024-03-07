@@ -1,18 +1,63 @@
-
 <!-- Dans search-user.component.html -->
+<br />
+<br />
+<br />
 
 <div class="container">
-    <h2>Rechercher un Utilisateur</h2>
-    <input type="number" [formControl]="id" placeholder="Entrez l'ID de l'utilisateur">
-    <button (click)="searchUser()">Rechercher</button>
-  
+  <h3><u>Search/Delete a user</u></h3>
+  <br />
+  <input type="number" [formControl]="id" placeholder="Enter a user Id" />
+  <a> ----> </a>
+  <button class="btn btn-success" (click)="searchUser()">Search</button>
+
+  <div class="row">
     <div *ngIf="user">
-      <p>ID: {{ user.id }}</p>
-      <p>Nom: {{ user.userName }}</p>
-      <p>Email: {{ user.email }}</p>
+      <p>
+        <br />
+        <fa-icon [icon]="icon1"></fa-icon> ID : <b>{{ user.id }} </b> ----> Nom
+        : <b>{{ user.userName }} </b> ----> Email :<b> {{ user.email }} </b>
+      </p>
+
       <!-- Affichez plus de détails si nécessaire -->
+      <button class="btn btn-success" (click)="searchPosts(user)">
+        Search posts
+      </button>
+      <a> ----> </a>
+      <button class="btn btn-danger" (click)="deleteUser()">Delete</button>
     </div>
-    
-    <p *ngIf="errorMessage">{{ errorMessage }}</p>
   </div>
-  
+
+  <p *ngIf="userErrorMessage">{{ userErrorMessage }}</p>
+</div>
+
+<!--*********************************-->
+<br />
+
+<div class="container mt-3" style="padding-top: 20px">
+  <h3><u>List of posts</u></h3>
+  <p *ngIf="postErrorMessage">{{ postErrorMessage }}</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Post-Id</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.content }}</td>
+        <button class="btn btn-danger" (click)="deletePost(post)">
+          <fa-icon [icon]="icon2"></fa-icon>
+        </button>
+        <!-- <td><fa-icon [icon]="icon2"></fa-icon></td>-->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+<br />

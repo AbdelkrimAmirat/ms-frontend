@@ -1,4 +1,3 @@
-
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,8 +11,9 @@ import { ListUsersComponent } from './module/list-users/list-users.component';
 import { AddUserComponent } from './module/add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchUserComponent } from './module/search-user/search-user.component';
-
-
+import { AddPostComponent } from './module/add-post/add-post.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './module/secure/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +24,19 @@ import { SearchUserComponent } from './module/search-user/search-user.component'
     ListUsersComponent,
     AddUserComponent,
     SearchUserComponent,
+    AddPostComponent,
+    LoginComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

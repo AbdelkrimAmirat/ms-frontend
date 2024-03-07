@@ -1,29 +1,31 @@
-<p>list-users works!</p>
+<br />
+<br />
 
+<div class="container mt-3" style="padding-top: 20px">
+  <h3><u>List of users</u></h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="onSelect(user)">
+        <td>{{ user.id }}</td>
+        <td>{{ user.userName }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-
-<div class="container mt-3">
-    <h2>Liste des Utilisateurs</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users" (click)="onSelect(user)">
-          <td>{{ user.userName }}</td>
-          <td>{{ user.email }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <div *ngIf="selectedUser" class="mt-4">
-      <h3>Détails de l'Utilisateur:</h3>
-      <p><strong>Nom:</strong> {{ selectedUser.userName }}</p>
-      <p><strong>Email:</strong> {{ selectedUser.email }}</p>
-      <!-- Ajoutez ici plus de détails si nécessaire -->
-    </div>
+  <div *ngIf="selectedUser" class="mt-4">
+    <h4><u>Details of the user</u></h4>
+    <p><strong>Nom:</strong> {{ selectedUser.userName }}</p>
+    <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+    <!-- Ajoutez ici plus de détails si nécessaire -->
   </div>
-  
+</div>
+
+<br />

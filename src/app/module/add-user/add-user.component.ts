@@ -36,7 +36,12 @@ export class AddUserComponent {
       const password = this.userForm.value.password;
       const newUser = new User(userName, email, password);
       this.userService.saveUser(newUser).subscribe({ });
-
     }
+    alert("Saving done")
+    this.userForm.reset({
+      'userName': '',
+      'email': '',
+      'password': '',
+    });
   }
 }

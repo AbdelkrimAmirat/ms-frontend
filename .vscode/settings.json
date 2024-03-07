@@ -1,0 +1,51 @@
+{
+    "workbench.editor.enablePreview": true,
+    "prettier.singleQuote": true,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "material-icon-theme",
+    "auto-rename-tag.activationOnLanguage": ["html", "xml", "javascript"],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.options": {
+      "extensions": [".ts", ".html"]
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html"
+    ],
+    // "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+    "typescriptHero.imports.organizeOnSave": true,
+    "typescriptHero.imports.grouping": [
+      "Plains",
+      "Modules",
+      "Workspace",
+      "Remaining"
+    ],
+    "breadcrumbs.enabled": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "terminal.integrated.profiles.windows": {
+      "Bash": {
+        "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "Bash",
+    "vsintellicode.java.completionsEnabled": false,
+    "vsintellicode.python.completionsEnabled": false,
+    "todo-tree.tree.autoRefresh": false,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // "html.format.wrapLineLength": 80,
+    // "typescriptHero.imports.multiLineWrapThreshold": 80,
+    "typescriptHero.imports.multiLineTrailingComma": false,
+    "html.autoCreateQuotes": false,
+    "html.completion.attributeDefaultValue": "singlequotes",
+    "js/ts.implicitProjectConfig.experimentalDecorators": true
+   }
+   
