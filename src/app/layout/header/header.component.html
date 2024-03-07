@@ -1,6 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-header">
+<nav class="navbar navbar-expand-lg navbar-light fixed-header p-2">
   <a class="navbar-brand" href="#"><strong>My-Application</strong></a>
-
   <button
     class="navbar-toggler"
     type="button"
@@ -14,45 +13,44 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav" style="background-color: #91c1aa">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/home"
-          >Home <span class="sr-only">(current)</span></a
-        >
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/add-user">Add user</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/list-users">List users</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/search-user">Search/Delete user</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/add-post">Add post</a>
-      </li>
-
-      <!--<li class="text-align:right">
-        <a class="nav-link"
-          >You are connected from
-          <strong style="color: crimson">{{ seconde }}</strong> seconds</a
-        >
-      </li>-->
-    </ul>
-
-    <ul class="navbar-nav ml-auto d-flex" style="background-color: #91c1aa">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login">Login</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" (click)="logOut()">Log out</a>
-      </li>
-    </ul>
+    <div class="navbar-nav w-100">
+      <div class="d-flex flex-row justify-content-between w-100 p-2">
+        <div>
+          <ul class="navbar-nav mr-auto" style="background-color: #91c1aa">
+            <!-- mr-auto will push everything else to the right -->
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/home"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/add-user">Add user</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/list-users">List users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/search-user"
+                >Search/Delete user</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/add-post">Add post</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <!-- Right-aligned links -->
+          <ul class="navbar-nav d-flex" style="background-color: #91c1aa">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logOut()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
