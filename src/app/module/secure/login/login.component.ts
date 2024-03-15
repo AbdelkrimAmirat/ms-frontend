@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../../../service/user.service';
 import { User } from 'src/app/model/user.model';
 import { Router } from '@angular/router';
-import { window } from 'rxjs';
+import { skip } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,21 +13,15 @@ export class LoginComponent {
   email: any;
   password: any;
   user: User;
-  token: String;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService) {}
 
   login() {
     this.userService.login(this.email, this.password).subscribe((result) => {
       if (result != undefined) {
         this.user = result;
 
-        this.router.navigate(['/search-user']);
-
-        //alert('User :' + this.user.userName + 'connected');
-
-        //localStorage.setItem('email', this.user.email);
-        //localStorage.setItem('password', this.user.password);
+        window.location.href = 'http://localhost:4200/home';
 
         localStorage.setItem('user', JSON.stringify(this.user as any));
       } else {

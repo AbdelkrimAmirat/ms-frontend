@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../model/post.model';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class PostService {
     'http://localhost:8080/posts/get-posts-by-user-id';
   private deletePostByIdApiUrl =
     'http://localhost:8080/posts/delete-post-by-id';
+  private getPostByIdApiUrl = 'http://localhost:8080/posts/get-post-by-id';
 
   constructor(private http: HttpClient) {}
 
@@ -30,5 +31,9 @@ export class PostService {
 
   public deletePostById(id: number): Observable<any> {
     return this.http.post<any>(`${this.deletePostByIdApiUrl}/${id}`, {});
+  }
+
+  public getPostById(postId: number): Observable<Post> {
+    return this.http.get<Post>(`${this.getPostByIdApiUrl}/${postId}`);
   }
 }

@@ -1,9 +1,6 @@
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  /* Hauteur fixe du footer, à ajuster selon votre contenu */
+
+.bottom-limit {
+  padding-top: 50px;
 }
 
 .fix-footer {
@@ -12,6 +9,3 @@
   width: -webkit-fill-available;
 }
 
-.bottom-limit {
-  padding-top: 50px;
-}

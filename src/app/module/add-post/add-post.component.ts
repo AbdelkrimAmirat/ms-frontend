@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from 'src/app/model/post.model';
+import { User } from 'src/app/model/user.model';
 import { PostService } from 'src/app/service/post.service';
 
 @Component({
@@ -10,12 +11,12 @@ import { PostService } from 'src/app/service/post.service';
 })
 export class AddPostComponent {
   postForm: FormGroup;
+  user: User;
 
   constructor(private postService: PostService) {}
 
   ngOnInit() {
     this.postForm = new FormGroup({
-      userId: new FormControl(null, [Validators.required]),
       title: new FormControl(null, [Validators.required]),
       content: new FormControl(null, [Validators.required]),
     });
@@ -25,7 +26,8 @@ export class AddPostComponent {
     if (this.postForm.valid) {
       const title = this.postForm.value.title;
       const content = this.postForm.value.content;
-      const userId = this.postForm.value.userId;
+      this.user = JSON.parse(localStorage.getItem('user') as any);
+      const userId = this.user.id as any;
       const newPost = new Post(title, content, userId);
       this.postService.savePost(newPost).subscribe({});
     }

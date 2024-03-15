@@ -14,6 +14,10 @@ import { SearchUserComponent } from './module/search-user/search-user.component'
 import { AddPostComponent } from './module/add-post/add-post.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './module/secure/login/login.component';
+import { PostDetailComponent } from './module/post-detail/post-detail.component';
+import { WpComponent } from './module/wp/wp.component';
+import { FormTestComponent } from './module/form-test/form-test.component';
+import { RegisterComponent } from './module/secure/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { LoginComponent } from './module/secure/login/login.component';
     SearchUserComponent,
     AddPostComponent,
     LoginComponent,
+    PostDetailComponent,
+    WpComponent,
+    FormTestComponent,
+    RegisterComponent,
   ],
 
   imports: [

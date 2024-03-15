@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Post } from 'src/app/model/post.model';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  email: String;
-  password: String;
+  posts: Post[] = [];
 
-  constructor() {
-    this.email = localStorage.getItem('email') as any;
-    this.password = localStorage.getItem('password') as any;
+  constructor(private postService: PostService) {}
+
+  ngOnInit() {
+    this.postService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
   }
 }

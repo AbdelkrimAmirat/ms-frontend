@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user.model';
 import { UserService } from '../../service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -9,13 +10,9 @@ import { UserService } from '../../service/user.service';
   styleUrls: ['./add-user.component.scss'],
 })
 export class AddUserComponent {
-
-
   userForm: FormGroup;
 
-  constructor(private userService:UserService) {
-
-  }
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -25,23 +22,23 @@ export class AddUserComponent {
       ]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
-    });  
+    });
   }
 
   onSubmit() {
     if (this.userForm.valid) {
-
       const userName = this.userForm.value.userName;
       const email = this.userForm.value.email;
       const password = this.userForm.value.password;
       const newUser = new User(userName, email, password);
-      this.userService.saveUser(newUser).subscribe({ });
+      this.userService.saveUser(newUser).subscribe({});
     }
-    alert("Saving done")
+    alert('Saving done');
     this.userForm.reset({
-      'userName': '',
-      'email': '',
-      'password': '',
+      userName: '',
+      email: '',
+      password: '',
     });
+    this.router.navigate(['/login']);
   }
 }
